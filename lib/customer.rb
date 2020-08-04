@@ -1,3 +1,4 @@
+require 'pry'
 class Customer
   attr_accessor :name, :age
   @@all = []
@@ -13,4 +14,7 @@ class Customer
     Meal.new(waiter, self, total, tip)
   end
   def meals
+    Meals.all.select {|meal| meal.customer == self}
+    binding.pry
+  end
 end
