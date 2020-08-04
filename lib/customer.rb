@@ -14,7 +14,6 @@ class Customer
     Meal.new(waiter, self, total, tip)
   end
   def meals
-    Meals.all.select {|meal| meal.name = self}
-    binding.pry
+    Meal.all.select {|meal| meal.name = self}
   end
 end
